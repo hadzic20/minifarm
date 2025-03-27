@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ProgressBarHayCode : ProgressBar
+public class ProgressBarBreadV1Code : ProgressBar
 {
-    public ProgressBarHayCode() : base(5) {}
+    public ProgressBarBreadV1Code() : base(20) {}
 }
