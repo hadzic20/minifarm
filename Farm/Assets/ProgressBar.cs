@@ -29,7 +29,7 @@ public abstract class ProgressBar : MonoBehaviour
 
     void Update()
     {
-        bartoptext.text = number + "/10";
+        bartoptext.text = number + "/" + capacity;
         if (line > 0 && time <= slider.maxValue && depoCount < capacity) {
             time += Time.deltaTime;
             bartext.text = ((int) (slider.maxValue - time + 1)) + " sn";
