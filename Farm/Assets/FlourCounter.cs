@@ -8,7 +8,7 @@ public class FlourCounter : MonoBehaviour
 {
     private int flourCount = 0;
     public TextMeshProUGUI ftext;
-    [SerializeField] FlourFactory flourfactory;
+    [SerializeField] ProgressBarFlourCode flourfactory;
 
     private void Start() {
         flourfactory.onCollectFlour += FlourCollected;

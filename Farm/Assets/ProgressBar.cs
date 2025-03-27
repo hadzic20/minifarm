@@ -11,7 +11,9 @@ public abstract class ProgressBar : MonoBehaviour
     public int depoCount;
     public TextMeshProUGUI depotext;
     public TextMeshProUGUI bartext;
+    public TextMeshProUGUI bartoptext;
     public int capacity;
+    protected int line = 0;
 
     protected ProgressBar(int capac) {
         capacity = capac;
@@ -26,6 +28,7 @@ public abstract class ProgressBar : MonoBehaviour
 
     void Update()
     {
+        bartoptext.text = line + "/10";
         if (time <= slider.maxValue && depoCount < capacity) {
             time += Time.deltaTime;
             bartext.text = ((int) (slider.maxValue - time + 1)) + " sn";
