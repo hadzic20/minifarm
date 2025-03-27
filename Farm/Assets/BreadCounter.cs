@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-public class ProgressBarBreadV2Code : ProgressBar
+public class BreadCounter : MonoBehaviour
 {
-    public ProgressBarBreadV2Code() : base(10) {}
-
+    private int breadCount = 0;
+    public TextMeshProUGUI btext;
+    [SerializeField] BreadFactoryV1 breadfactory1;
     [SerializeField] BreadFactoryV2 breadfactory2;
 
     private void Start() {
+        breadfactory1.onCollectBread += BreadCollected;
         breadfactory2.onCollectBread += BreadCollected;
     }
 
     public void BreadCollected(object sender, EventArguments e) {
-        depoCount = 0;
-        depotext.text = "" + depoCount;
+        breadCount += e.value;
+        btext.text = "" + breadCount;
     }
 }
