@@ -322,7 +322,10 @@ MonoBehaviour:
   bartext: {fileID: 1019168805}
   bartoptext: {fileID: 257214870}
   capacity: 10
+  line: 0
+  rmv: {fileID: 614164612}
   flourfactory: {fileID: 1436363056}
+  haycount: {fileID: 868285277}
   remove: {fileID: 614164610}
   add: {fileID: 850884363}
 --- !u!114 &66650962
@@ -1809,6 +1812,7 @@ MonoBehaviour:
   bartext: {fileID: 2137399907}
   bartoptext: {fileID: 187910897}
   capacity: 5
+  line: 0
   hayfactory: {fileID: 1793917522}
 --- !u!114 &511080401
 MonoBehaviour:
@@ -2169,7 +2173,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 614164612}
         m_TargetAssemblyTypeName: RemoveFlourButton, Assembly-CSharp
-        m_MethodName: x
+        m_MethodName: clickedRemove
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2645,6 +2649,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778569293}
   m_CullTransparentMesh: 1
+--- !u!1 &817076404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 817076407}
+  - component: {fileID: 817076406}
+  - component: {fileID: 817076405}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &817076405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817076404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &817076406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817076404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &817076407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817076404}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,6 +2820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfae0229665742fd801b8a8ea93488c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfc: {fileID: 66650961}
 --- !u!114 &850884366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2791,7 +2864,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 850884367}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 850884365}
+        m_TargetAssemblyTypeName: AddFlourButton, Assembly-CSharp
+        m_MethodName: clickedAdd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &850884367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3944,6 +4029,7 @@ MonoBehaviour:
   bartext: {fileID: 1662232516}
   bartoptext: {fileID: 886001704}
   capacity: 20
+  line: 0
   breadfactory1: {fileID: 177200548}
 --- !u!114 &1227029827
 MonoBehaviour:
@@ -6043,6 +6129,7 @@ MonoBehaviour:
   bartext: {fileID: 1758104729}
   bartoptext: {fileID: 1947098947}
   capacity: 10
+  line: 0
   breadfactory2: {fileID: 1901492664}
 --- !u!114 &1968445321
 MonoBehaviour:
@@ -6466,3 +6553,4 @@ SceneRoots:
   - {fileID: 481942094}
   - {fileID: 1100066536}
   - {fileID: 1433838539}
+  - {fileID: 817076407}

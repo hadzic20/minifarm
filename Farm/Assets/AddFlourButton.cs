@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class AddFlourButton : MonoBehaviour
 {
+    public ProgressBarFlourCode pfc;
     public event EventHandler addFlourClicked;
 
-    void OnMouseDown() {
-        Debug.Log("dfgerfd");
-        addFlourClicked?.Invoke(this, EventArgs.Empty);
+    public void clickedAdd() {
+        if (pfc.line < 10) {
+            addFlourClicked?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

@@ -8,8 +8,7 @@ public class RemoveFlourButton : MonoBehaviour
 {
     public event EventHandler removeFlourClicked;
 
-    public void x() {
-        Debug.Log("dfgerfd");
+    public void clickedRemove() {
         removeFlourClicked?.Invoke(this, EventArgs.Empty);
     }
 }

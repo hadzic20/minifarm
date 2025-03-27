@@ -13,7 +13,8 @@ public abstract class ProgressBar : MonoBehaviour
     public TextMeshProUGUI bartext;
     public TextMeshProUGUI bartoptext;
     public int capacity;
-    protected int line = 0;
+    public int line = 0;
+    protected int number = 0;
 
     protected ProgressBar(int capac) {
         capacity = capac;
@@ -28,18 +29,24 @@ public abstract class ProgressBar : MonoBehaviour
 
     void Update()
     {
-        bartoptext.text = line + "/10";
-        if (time <= slider.maxValue && depoCount < capacity) {
+        bartoptext.text = number + "/10";
+        if (line > 0 && time <= slider.maxValue && depoCount < capacity) {
             time += Time.deltaTime;
             bartext.text = ((int) (slider.maxValue - time + 1)) + " sn";
             Progress(time);
         }
-        else if (depoCount < capacity) {
+        else if (depoCount < capacity && line == 0) {
+            time = Time.deltaTime;
+            bartext.text = ((int) (slider.maxValue - time + 1)) + " sn";
+            Progress(time);
+        }
+        else if (depoCount < capacity && line > 0) {
+            line--;
             depoCount++;
             depotext.text = "" + depoCount;
             time = Time.deltaTime;
         }
-        else {
+        else if (depoCount == capacity) {
             bartext.text = "FULL";
         }
     }

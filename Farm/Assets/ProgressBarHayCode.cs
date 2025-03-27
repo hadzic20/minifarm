@@ -11,6 +11,7 @@ public class ProgressBarHayCode : ProgressBar
     
     private void Start() {
         hayfactory.onCollectHay += HayCollected;
+        line = 1000;
     }
 
     public void HayCollected(object sender, EventArguments e) {
