@@ -13,8 +13,8 @@ public abstract class ProgressBar : MonoBehaviour
     public TextMeshProUGUI bartext;
     public TextMeshProUGUI bartoptext;
     public int capacity;
-    public int line = 0;
-    protected int number = 0;
+    protected int line = 0;
+    public int number = 0;
 
     protected ProgressBar(int capac) {
         capacity = capac;

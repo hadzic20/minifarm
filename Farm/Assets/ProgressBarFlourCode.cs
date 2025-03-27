@@ -41,7 +41,7 @@ public class ProgressBarFlourCode : ProgressBar
     }
 
     public void AddFlourToLine(object sender, EventArgs e) {
-        if (line < 10) {
+        if (number < capacity) {
             line++;
             number++;
         }

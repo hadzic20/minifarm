@@ -9,7 +9,7 @@ public class AddFlourButton : MonoBehaviour
     public event EventHandler addFlourClicked;
 
     public void clickedAdd() {
-        if (pfc.line < 10) {
+        if (pfc.number < 10) {
             addFlourClicked?.Invoke(this, EventArgs.Empty);
         }
     }
