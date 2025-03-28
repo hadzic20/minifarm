@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AddFlourButton : MonoBehaviour
 {
-    public ProgressBarFlourCode pfc;
+    [SerializeField] private ProgressBarFlourCode pfc;
     public event EventHandler addFlourClicked;
 
     public void clickedAdd() {

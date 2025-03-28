@@ -8,22 +8,22 @@ using TMPro;
 public class HayCounter : MonoBehaviour
 {
     private int hayCount = 0;
-    public TextMeshProUGUI htext;
+    [SerializeField] private TextMeshProUGUI htext;
     public event EventHandler SentHayForFlour;
-    [SerializeField] HayFactory hayfactory;
-    [SerializeField] AddFlourButton afb;
+    [SerializeField] private HayFactory hayfactory;
+    [SerializeField] private AddFlourButton afb;
 
     private void Start() {
         hayfactory.onCollectHay += HayCollected;
         afb.addFlourClicked += HayUsed;
     }
 
-    public void HayCollected(object sender, EventArguments e) {
+    private void HayCollected(object sender, EventArguments e) {
         hayCount += e.value;
-        htext.text = "" + hayCount;
+        htext.text = hayCount.ToString();
     }
 
-    public void HayUsed(object sender, EventArgs e) {
+    private void HayUsed(object sender, EventArgs e) {
         if (hayCount > 0) {
             hayCount--;
             htext.text = "" + hayCount;

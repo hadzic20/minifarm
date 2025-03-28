@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class HayFactory : MonoBehaviour
 {
-    [SerializeField] ProgressBarHayCode pbr;
+    [SerializeField] private ProgressBarHayCode pbr;
     public event EventHandler<EventArguments> onCollectHay;
+    public event EventHandler closeAllButtons;
 
-    void OnMouseDown() {
+    private void OnMouseDown() {
         onCollectHay?.Invoke(this, new EventArguments(pbr.depoCount));
+        closeAllButtons?.Invoke(this, EventArgs.Empty);
     }
 }

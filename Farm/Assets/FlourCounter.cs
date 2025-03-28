@@ -8,12 +8,12 @@ using TMPro;
 public class FlourCounter : MonoBehaviour
 {
     private int flourCount = 0;
-    public TextMeshProUGUI ftext;
+    [SerializeField] private TextMeshProUGUI ftext;
     public event EventHandler SentFlourForBread1;
     public event EventHandler SentFlourForBread2;
-    [SerializeField] ProgressBarFlourCode flourfactory;
-    [SerializeField] AddBreadV1 abv1;
-    [SerializeField] AddBreadV2 abv2;
+    [SerializeField] private ProgressBarFlourCode flourfactory;
+    [SerializeField] private AddBreadV1 abv1;
+    [SerializeField] private AddBreadV2 abv2;
 
     private void Start() {
         flourfactory.onCollectFlour += FlourCollected;
@@ -21,23 +21,23 @@ public class FlourCounter : MonoBehaviour
         abv2.addBread2Clicked += FlourUsed1;
     }
 
-    public void FlourCollected(object sender, EventArguments e) {
+    private void FlourCollected(object sender, EventArguments e) {
         flourCount += e.value;
-        ftext.text = "" + flourCount;
+        ftext.text = flourCount.ToString();
     }
 
-    public void FlourUsed2(object sender, EventArgs e) {
+    private void FlourUsed2(object sender, EventArgs e) {
         if (flourCount > 1) {
             flourCount -= 2;
-            ftext.text = "" + flourCount;
+            ftext.text = flourCount.ToString();
             SentFlourForBread1?.Invoke(this, EventArgs.Empty);
         }
     }
 
-    public void FlourUsed1(object sender, EventArgs e) {
+    private void FlourUsed1(object sender, EventArgs e) {
         if (flourCount > 0) {
             flourCount--;
-            ftext.text = "" + flourCount;
+            ftext.text = flourCount.ToString();
             SentFlourForBread2?.Invoke(this, EventArgs.Empty);
         }
     }

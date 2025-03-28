@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class BreadFactoryV1 : MonoBehaviour
 {
-    [SerializeField] ProgressBarBreadV1Code pbr1;
+    [SerializeField] private ProgressBarBreadV1Code pbr1;
     public event EventHandler<EventArguments> onCollectBread;
+    public event EventHandler closeBread2andFlour;
 
-    void OnMouseDown() {
+    private void OnMouseDown() {
         onCollectBread?.Invoke(this, new EventArguments(pbr1.depoCount));
+        closeBread2andFlour?.Invoke(this, EventArgs.Empty);
     }
 }

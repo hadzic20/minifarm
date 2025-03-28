@@ -7,15 +7,16 @@ public class ProgressBarHayCode : ProgressBar
 {
     public ProgressBarHayCode() : base(5) {}
 
-    [SerializeField] HayFactory hayfactory;
+    [SerializeField] private HayFactory hayfactory;
     
     private void Start() {
         hayfactory.onCollectHay += HayCollected;
-        line = 1000;
+        line = 10000;
     }
 
-    public void HayCollected(object sender, EventArguments e) {
+    private void HayCollected(object sender, EventArguments e) {
         depoCount = 0;
-        depotext.text = "" + depoCount;
+        depotext.text = depoCount.ToString();
+        line++;
     }
 }

@@ -9,9 +9,12 @@ public class ProgressBarBreadV1Code : ProgressBar
     public ProgressBarBreadV1Code() : base(20) {}
 
     public event EventHandler<EventArguments> collectingBread1;
-    [SerializeField] RemoveBreadV1 rmv;
-    [SerializeField] BreadFactoryV1 breadfactory1;
-    [SerializeField] FlourCounter flourcount;
+    [SerializeField] private RemoveBreadV1 rmv;
+    [SerializeField] private BreadFactoryV1 breadfactory1;
+    [SerializeField] private BreadFactoryV2 breadfactory2;
+    [SerializeField] private FlourFactory flourfactory;
+    [SerializeField] private HayFactory hayfactory;
+    [SerializeField] private FlourCounter flourcount;
     [SerializeField] private GameObject remove;
     [SerializeField] private GameObject add;
     private bool buttonsOn = false;
@@ -20,11 +23,14 @@ public class ProgressBarBreadV1Code : ProgressBar
         remove.SetActive(false);
         add.SetActive(false);
         breadfactory1.onCollectBread += BreadCollected;
+        flourfactory.closeBreadButtons += CloseButtons;
+        hayfactory.closeAllButtons += CloseButtons;
+        breadfactory2.closeBread1andFlour += CloseButtons;
         flourcount.SentFlourForBread1 += AddBreadV1ToLine;
         rmv.removeBreadV1Clicked += RemoveFromLine;
     }
 
-    public void BreadCollected(object sender, EventArguments e) {
+    private void BreadCollected(object sender, EventArguments e) {
         if (!buttonsOn) {
             remove.SetActive(true);
             add.SetActive(true);
@@ -34,20 +40,26 @@ public class ProgressBarBreadV1Code : ProgressBar
             collectingBread1?.Invoke(this, new EventArguments(depoCount));
             number -= depoCount;
             depoCount = 0;
-            depotext.text = "" + depoCount;
+            depotext.text = depoCount.ToString();
         }
     }
-    public void AddBreadV1ToLine(object sender, EventArgs e) {
+    private void AddBreadV1ToLine(object sender, EventArgs e) {
         if (number < capacity) {
             line++;
             number++;
         }
     }
 
-    public void RemoveFromLine(object sender, EventArgs e) {
+    private void RemoveFromLine(object sender, EventArgs e) {
         if (line > 0) {
             line--;
             number--;
         }
+    }
+
+    private void CloseButtons(object sender, EventArgs e) {
+        remove.SetActive(false);
+        add.SetActive(false);
+        buttonsOn = false;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AddBreadV1 : MonoBehaviour
 {
-    public ProgressBarBreadV1Code pbc1;
+    [SerializeField] private ProgressBarBreadV1Code pbc1;
     public event EventHandler addBread1Clicked;
 
     public void clickedAdd() {

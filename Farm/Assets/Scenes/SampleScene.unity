@@ -442,11 +442,11 @@ RectTransform:
   - {fileID: 614164611}
   - {fileID: 850884364}
   - {fileID: 257214869}
-  m_Father: {fileID: 1433838539}
+  m_Father: {fileID: 1100066536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 40}
+  m_AnchoredPosition: {x: 0, y: 40}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66650961
@@ -462,15 +462,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 66650962}
-  time: 0
   depoCount: 0
-  depotext: {fileID: 729282653}
   bartext: {fileID: 1019168805}
+  depotext: {fileID: 729282653}
   bartoptext: {fileID: 257214870}
-  capacity: 10
   number: 0
   rmv: {fileID: 614164612}
+  breadfactory1: {fileID: 177200548}
+  breadfactory2: {fileID: 1901492664}
   flourfactory: {fileID: 1436363056}
+  hayfactory: {fileID: 1793917522}
   haycount: {fileID: 868285277}
   remove: {fileID: 614164610}
   add: {fileID: 850884363}
@@ -1932,7 +1933,7 @@ RectTransform:
   - {fileID: 7576424}
   - {fileID: 2137399906}
   - {fileID: 187910896}
-  m_Father: {fileID: 1433838539}
+  m_Father: {fileID: 1100066536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1952,12 +1953,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 511080401}
-  time: 0
   depoCount: 0
-  depotext: {fileID: 7576425}
   bartext: {fileID: 2137399907}
+  depotext: {fileID: 7576425}
   bartoptext: {fileID: 187910897}
-  capacity: 5
   number: 0
   hayfactory: {fileID: 1793917522}
 --- !u!114 &511080401
@@ -4321,6 +4320,10 @@ RectTransform:
   - {fileID: 1203970972}
   - {fileID: 868285276}
   - {fileID: 1870563200}
+  - {fileID: 511080399}
+  - {fileID: 66650960}
+  - {fileID: 1227029825}
+  - {fileID: 1968445319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4571,7 +4574,7 @@ RectTransform:
   - {fileID: 57423980}
   - {fileID: 2014275761}
   - {fileID: 886001703}
-  m_Father: {fileID: 1433838539}
+  m_Father: {fileID: 1100066536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4591,15 +4594,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1227029827}
-  time: 0
   depoCount: 0
-  depotext: {fileID: 1575119395}
   bartext: {fileID: 1662232516}
+  depotext: {fileID: 1575119395}
   bartoptext: {fileID: 886001704}
-  capacity: 20
   number: 0
   rmv: {fileID: 57423981}
   breadfactory1: {fileID: 177200548}
+  breadfactory2: {fileID: 1901492664}
+  flourfactory: {fileID: 1436363056}
+  hayfactory: {fileID: 1793917522}
   flourcount: {fileID: 1870563201}
   remove: {fileID: 57423979}
   add: {fileID: 2014275760}
@@ -5014,111 +5018,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320517937}
   m_CullTransparentMesh: 1
---- !u!1 &1433838535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1433838539}
-  - component: {fileID: 1433838538}
-  - component: {fileID: 1433838537}
-  - component: {fileID: 1433838536}
-  m_Layer: 5
-  m_Name: CanvasBars
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1433838536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433838535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1433838537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433838535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &1433838538
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433838535}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &1433838539
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433838535}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 511080399}
-  - {fileID: 66650960}
-  - {fileID: 1227029825}
-  - {fileID: 1968445319}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1436363051 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a0cde6bd8e3145f9bf83a543c3636a1,
@@ -7379,7 +7278,7 @@ RectTransform:
   - {fileID: 1657171655}
   - {fileID: 1875914613}
   - {fileID: 1947098946}
-  m_Father: {fileID: 1433838539}
+  m_Father: {fileID: 1100066536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7399,15 +7298,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1968445321}
-  time: 0
   depoCount: 0
-  depotext: {fileID: 1749623184}
   bartext: {fileID: 1758104729}
+  depotext: {fileID: 1749623184}
   bartoptext: {fileID: 1947098947}
-  capacity: 10
   number: 0
   rmv: {fileID: 1657171656}
+  breadfactory1: {fileID: 177200548}
   breadfactory2: {fileID: 1901492664}
+  flourfactory: {fileID: 1436363056}
+  hayfactory: {fileID: 1793917522}
   flourcount: {fileID: 1870563201}
   remove: {fileID: 1657171654}
   add: {fileID: 1875914612}
@@ -8116,5 +8016,4 @@ SceneRoots:
   - {fileID: 551260090}
   - {fileID: 481942094}
   - {fileID: 1100066536}
-  - {fileID: 1433838539}
   - {fileID: 817076407}
