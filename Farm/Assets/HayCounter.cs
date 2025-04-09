@@ -11,7 +11,7 @@ public class HayCounter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI htext;
     public event EventHandler SentHayForFlour;
     [SerializeField] private HayFactory hayfactory;
-    [SerializeField] private AddFlourButton afb;
+    [SerializeField] private AddButton afb;
 
     private void Start() {
         hayfactory.onCollectHay += HayCollected;

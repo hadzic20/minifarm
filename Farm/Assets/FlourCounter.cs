@@ -12,12 +12,12 @@ public class FlourCounter : MonoBehaviour
     public event EventHandler SentFlourForBread1;
     public event EventHandler SentFlourForBread2;
     [SerializeField] private ProgressBarFlourCode flourfactory;
-    [SerializeField] private AddBreadV1 abv1;
-    [SerializeField] private AddBreadV2 abv2;
+    [SerializeField] private AddButton abv;
+    [SerializeField] private AddButton abv2;
 
     private void Start() {
         flourfactory.onCollectFlour += FlourCollected;
-        abv1.addBread1Clicked += FlourUsed2;
+        abv.addBread1Clicked += FlourUsed2;
         abv2.addBread2Clicked += FlourUsed1;
     }
 

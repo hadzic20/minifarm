@@ -8,12 +8,12 @@ public class BreadCounter : MonoBehaviour
 {
     private int breadCount = 0;
     [SerializeField] private TextMeshProUGUI btext;
-    [SerializeField] private BreadFactoryV1 breadfactory1;
-    [SerializeField] private BreadFactoryV2 breadfactory2;
+    [SerializeField] private ProgressBarBreadV1Code breadfactory1;
+    [SerializeField] private ProgressBarBreadV2Code breadfactory2;
 
     private void Start() {
-        breadfactory1.onCollectBread += BreadCollected;
-        breadfactory2.onCollectBread += BreadCollected;
+        breadfactory1.collectingBread1 += BreadCollected;
+        breadfactory2.collectingBread2 += BreadCollected;
     }
 
     private void BreadCollected(object sender, EventArguments e) {

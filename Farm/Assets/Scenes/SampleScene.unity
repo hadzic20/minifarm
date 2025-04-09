@@ -306,7 +306,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 57423979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf3ad55574304b4983c8ee57d599538, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d19b368c536484ba1e9b50e8768b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &57423982
@@ -354,8 +354,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 57423981}
-        m_TargetAssemblyTypeName: RemoveBreadV1, Assembly-CSharp
-        m_MethodName: clickedRemove
+        m_TargetAssemblyTypeName: RemoveButton, Assembly-CSharp
+        m_MethodName: clickedRemoveBreadV1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -466,8 +466,9 @@ MonoBehaviour:
   bartext: {fileID: 1019168805}
   depotext: {fileID: 729282653}
   bartoptext: {fileID: 257214870}
+  capacity: 10
   number: 0
-  rmv: {fileID: 614164612}
+  rmv: {fileID: 614164616}
   breadfactory1: {fileID: 177200548}
   breadfactory2: {fileID: 1901492664}
   flourfactory: {fileID: 1436363056}
@@ -1957,6 +1958,7 @@ MonoBehaviour:
   bartext: {fileID: 2137399907}
   depotext: {fileID: 7576425}
   bartoptext: {fileID: 187910897}
+  capacity: 5
   number: 0
   hayfactory: {fileID: 1793917522}
 --- !u!114 &511080401
@@ -2367,7 +2369,7 @@ GameObject:
   - component: {fileID: 614164615}
   - component: {fileID: 614164614}
   - component: {fileID: 614164613}
-  - component: {fileID: 614164612}
+  - component: {fileID: 614164616}
   m_Layer: 5
   m_Name: Remove
   m_TagString: Untagged
@@ -2395,18 +2397,6 @@ RectTransform:
   m_AnchoredPosition: {x: -80, y: 65}
   m_SizeDelta: {x: 100, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &614164612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614164610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13b4bc8e94c7b4a4bb64377fc401d7b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &614164613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2451,9 +2441,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 614164612}
-        m_TargetAssemblyTypeName: RemoveFlourButton, Assembly-CSharp
-        m_MethodName: clickedRemove
+      - m_Target: {fileID: 614164616}
+        m_TargetAssemblyTypeName: RemoveButton, Assembly-CSharp
+        m_MethodName: clickedRemoveFlour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2501,6 +2491,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614164610}
   m_CullTransparentMesh: 1
+--- !u!114 &614164616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614164610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d19b368c536484ba1e9b50e8768b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &660723142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3193,7 +3195,7 @@ GameObject:
   - component: {fileID: 850884368}
   - component: {fileID: 850884367}
   - component: {fileID: 850884366}
-  - component: {fileID: 850884365}
+  - component: {fileID: 850884369}
   m_Layer: 5
   m_Name: Add
   m_TagString: Untagged
@@ -3223,19 +3225,6 @@ RectTransform:
   m_AnchoredPosition: {x: 85, y: 65}
   m_SizeDelta: {x: 100, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &850884365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850884363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cfae0229665742fd801b8a8ea93488c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pfc: {fileID: 66650961}
 --- !u!114 &850884366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3280,9 +3269,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 850884365}
+      - m_Target: {fileID: 850884369}
         m_TargetAssemblyTypeName: AddFlourButton, Assembly-CSharp
-        m_MethodName: clickedAdd
+        m_MethodName: clickedAddFlour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3330,6 +3319,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850884363}
   m_CullTransparentMesh: 1
+--- !u!114 &850884369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850884363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6434abcbcbc194db98dcb1a3ead47cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &868285275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,7 +3384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   htext: {fileID: 544744808}
   hayfactory: {fileID: 1793917522}
-  afb: {fileID: 850884365}
+  afb: {fileID: 850884369}
 --- !u!1 &886001702
 GameObject:
   m_ObjectHideFlags: 0
@@ -4533,8 +4534,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btext: {fileID: 1037848418}
-  breadfactory1: {fileID: 177200548}
-  breadfactory2: {fileID: 1901492664}
+  breadfactory1: {fileID: 1227029826}
+  breadfactory2: {fileID: 1968445320}
 --- !u!1 &1227029824
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,6 +4599,7 @@ MonoBehaviour:
   bartext: {fileID: 1662232516}
   depotext: {fileID: 1575119395}
   bartoptext: {fileID: 886001704}
+  capacity: 20
   number: 0
   rmv: {fileID: 57423981}
   breadfactory1: {fileID: 177200548}
@@ -5814,7 +5816,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1657171654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be0d3b268a7844e02868028b6e1aa7a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d19b368c536484ba1e9b50e8768b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1657171657
@@ -5862,8 +5864,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1657171656}
-        m_TargetAssemblyTypeName: RemoveBreadV2, Assembly-CSharp
-        m_MethodName: clickedRemove
+        m_TargetAssemblyTypeName: RemoveButton, Assembly-CSharp
+        m_MethodName: clickedRemoveBreadV2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6844,8 +6846,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ftext: {fileID: 1866620083}
   flourfactory: {fileID: 66650961}
-  abv1: {fileID: 2014275762}
-  abv2: {fileID: 1875914614}
+  abv: {fileID: 2014275766}
+  abv2: {fileID: 1875914618}
 --- !u!1 &1875914612
 GameObject:
   m_ObjectHideFlags: 0
@@ -6858,7 +6860,7 @@ GameObject:
   - component: {fileID: 1875914617}
   - component: {fileID: 1875914616}
   - component: {fileID: 1875914615}
-  - component: {fileID: 1875914614}
+  - component: {fileID: 1875914618}
   m_Layer: 5
   m_Name: Add
   m_TagString: Untagged
@@ -6888,19 +6890,6 @@ RectTransform:
   m_AnchoredPosition: {x: 80, y: 75}
   m_SizeDelta: {x: 100, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1875914614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875914612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b9fb517b5b14f31aa05318adb2319b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pbc2: {fileID: 1968445320}
 --- !u!114 &1875914615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6945,9 +6934,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1875914614}
-        m_TargetAssemblyTypeName: AddBreadV2, Assembly-CSharp
-        m_MethodName: clickedAdd
+      - m_Target: {fileID: 1875914618}
+        m_TargetAssemblyTypeName: AddFlourButton, Assembly-CSharp
+        m_MethodName: clickedAddBreadV2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6995,6 +6984,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875914612}
   m_CullTransparentMesh: 1
+--- !u!114 &1875914618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875914612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6434abcbcbc194db98dcb1a3ead47cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1901492660 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d0734a34f37494c0191dd98a4590f00a,
@@ -7302,6 +7303,7 @@ MonoBehaviour:
   bartext: {fileID: 1758104729}
   depotext: {fileID: 1749623184}
   bartoptext: {fileID: 1947098947}
+  capacity: 10
   number: 0
   rmv: {fileID: 1657171656}
   breadfactory1: {fileID: 177200548}
@@ -7450,7 +7452,7 @@ GameObject:
   - component: {fileID: 2014275765}
   - component: {fileID: 2014275764}
   - component: {fileID: 2014275763}
-  - component: {fileID: 2014275762}
+  - component: {fileID: 2014275766}
   m_Layer: 5
   m_Name: Add
   m_TagString: Untagged
@@ -7480,19 +7482,6 @@ RectTransform:
   m_AnchoredPosition: {x: 125, y: 125}
   m_SizeDelta: {x: 100, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2014275762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014275760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a126f18aa8b40339a52ae1c9b2c245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pbc1: {fileID: 1227029826}
 --- !u!114 &2014275763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7537,9 +7526,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2014275762}
-        m_TargetAssemblyTypeName: AddBreadV1, Assembly-CSharp
-        m_MethodName: clickedAdd
+      - m_Target: {fileID: 2014275766}
+        m_TargetAssemblyTypeName: AddFlourButton, Assembly-CSharp
+        m_MethodName: clickedAddBreadV1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7587,6 +7576,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014275760}
   m_CullTransparentMesh: 1
+--- !u!114 &2014275766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014275760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6434abcbcbc194db98dcb1a3ead47cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2035655670
 PrefabInstance:
   m_ObjectHideFlags: 0

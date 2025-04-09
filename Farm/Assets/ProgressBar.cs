@@ -12,7 +12,7 @@ public abstract class ProgressBar : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bartext;
     [SerializeField] protected TextMeshProUGUI depotext;
     [SerializeField] protected TextMeshProUGUI bartoptext;
-    protected int capacity;
+    public int capacity;
     protected int line = 0;
     public int number = 0;
 

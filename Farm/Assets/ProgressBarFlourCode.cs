@@ -10,7 +10,7 @@ public class ProgressBarFlourCode : ProgressBar
     public ProgressBarFlourCode() : base(10) {}
 
     public event EventHandler<EventArguments> onCollectFlour;
-    [SerializeField] private RemoveFlourButton rmv;
+    [SerializeField] private RemoveButton rmv;
     [SerializeField] private BreadFactoryV1 breadfactory1;
     [SerializeField] private BreadFactoryV2 breadfactory2;
     [SerializeField] private FlourFactory flourfactory;

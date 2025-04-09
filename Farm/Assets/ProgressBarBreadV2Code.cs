@@ -9,7 +9,7 @@ public class ProgressBarBreadV2Code : ProgressBar
     public ProgressBarBreadV2Code() : base(10) {}
 
     public event EventHandler<EventArguments> collectingBread2;
-    [SerializeField] private RemoveBreadV2 rmv;
+    [SerializeField] private RemoveButton rmv;
     [SerializeField] private BreadFactoryV1 breadfactory1;
     [SerializeField] private BreadFactoryV2 breadfactory2;
     [SerializeField] private FlourFactory flourfactory;
