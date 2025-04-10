@@ -11,10 +11,10 @@ public class ProgressBarFlourCode : ProgressBar
 
     public event EventHandler<EventArguments> onCollectFlour;
     [SerializeField] private RemoveButton rmv;
-    [SerializeField] private BreadFactoryV1 breadfactory1;
-    [SerializeField] private BreadFactoryV2 breadfactory2;
-    [SerializeField] private FlourFactory flourfactory;
-    [SerializeField] private HayFactory hayfactory;
+    [SerializeField] private Buildings breadfactory1;
+    [SerializeField] private Buildings breadfactory2;
+    [SerializeField] private Buildings flourfactory;
+    [SerializeField] private Buildings hayfactory;
     [SerializeField] private HayCounter haycount;
     [SerializeField] private GameObject remove;
     [SerializeField] private GameObject add;
@@ -25,8 +25,8 @@ public class ProgressBarFlourCode : ProgressBar
         remove.SetActive(false);
         add.SetActive(false);
         hayfactory.closeAllButtons += CloseButtons;
-        breadfactory1.closeBread2andFlour += CloseButtons;
-        breadfactory2.closeBread1andFlour += CloseButtons;
+        breadfactory1.closeAllButtons += CloseButtons;
+        breadfactory2.closeAllButtons += CloseButtons;
         flourfactory.onCollectFlour += FlourCollected;
         haycount.SentHayForFlour += AddFlourToLine;
         rmv.removeFlourClicked += RemoveFromLine;

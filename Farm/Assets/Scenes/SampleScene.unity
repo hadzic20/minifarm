@@ -469,10 +469,10 @@ MonoBehaviour:
   capacity: 10
   number: 0
   rmv: {fileID: 614164616}
-  breadfactory1: {fileID: 177200548}
-  breadfactory2: {fileID: 1901492664}
-  flourfactory: {fileID: 1436363056}
-  hayfactory: {fileID: 1793917522}
+  breadfactory1: {fileID: 177200553}
+  breadfactory2: {fileID: 1901492669}
+  flourfactory: {fileID: 1436363060}
+  hayfactory: {fileID: 1793917527}
   haycount: {fileID: 868285277}
   remove: {fileID: 614164610}
   add: {fileID: 850884363}
@@ -826,19 +826,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 551260090}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &177200548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177200544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f63b028a5bfc42999c7d2864d95471b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pbr1: {fileID: 1227029826}
 --- !u!64 &177200549
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -861,6 +848,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1452732555326133405, guid: b1b05da95564c48a9a46e6dd47b5e726, type: 3}
+--- !u!114 &177200553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177200544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0934a11be66a48599b0ee5e28f6356b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  product: 2
+  pb: {fileID: 1227029826}
 --- !u!1 &187910895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,7 +1896,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d0734a34f37494c0191dd98a4590f00a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1901492664}
+      addedObject: {fileID: 1901492669}
   m_SourcePrefab: {fileID: 100100000, guid: d0734a34f37494c0191dd98a4590f00a, type: 3}
 --- !u!1 &511080398
 GameObject:
@@ -1960,7 +1961,7 @@ MonoBehaviour:
   bartoptext: {fileID: 187910897}
   capacity: 5
   number: 0
-  hayfactory: {fileID: 1793917522}
+  hayfactory: {fileID: 1793917527}
 --- !u!114 &511080401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2351,11 +2352,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1b05da95564c48a9a46e6dd47b5e726,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 177200548}
+      addedObject: {fileID: 177200549}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1b05da95564c48a9a46e6dd47b5e726,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 177200549}
+      addedObject: {fileID: 177200553}
   m_SourcePrefab: {fileID: 100100000, guid: b1b05da95564c48a9a46e6dd47b5e726, type: 3}
 --- !u!1 &614164610
 GameObject:
@@ -3383,7 +3384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   htext: {fileID: 544744808}
-  hayfactory: {fileID: 1793917522}
+  hayfactory: {fileID: 1793917527}
   afb: {fileID: 850884369}
 --- !u!1 &886001702
 GameObject:
@@ -4535,7 +4536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btext: {fileID: 1037848418}
   breadfactory1: {fileID: 1227029826}
-  breadfactory2: {fileID: 1968445320}
+  breadfactory2: {fileID: 1968445322}
 --- !u!1 &1227029824
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,10 +4603,10 @@ MonoBehaviour:
   capacity: 20
   number: 0
   rmv: {fileID: 57423981}
-  breadfactory1: {fileID: 177200548}
-  breadfactory2: {fileID: 1901492664}
-  flourfactory: {fileID: 1436363056}
-  hayfactory: {fileID: 1793917522}
+  breadfactory1: {fileID: 177200553}
+  breadfactory2: {fileID: 1901492669}
+  flourfactory: {fileID: 1436363060}
+  hayfactory: {fileID: 1793917527}
   flourcount: {fileID: 1870563201}
   remove: {fileID: 57423979}
   add: {fileID: 2014275760}
@@ -5048,7 +5049,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3151765900964793183, guid: 7a0cde6bd8e3145f9bf83a543c3636a1, type: 3}
---- !u!114 &1436363056
+--- !u!114 &1436363060
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5057,10 +5058,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1436363051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca0c1c0c1e9d4ca6b30528965040810, type: 3}
+  m_Script: {fileID: 11500000, guid: d0934a11be66a48599b0ee5e28f6356b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pfr: {fileID: 66650961}
+  product: 1
+  pb: {fileID: 66650961}
 --- !u!1 &1491640803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5341,11 +5343,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e62e7af20a2274bb8a69fb3d2394dfe3,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1793917522}
+      addedObject: {fileID: 1793917523}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e62e7af20a2274bb8a69fb3d2394dfe3,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1793917523}
+      addedObject: {fileID: 1793917527}
   m_SourcePrefab: {fileID: 100100000, guid: e62e7af20a2274bb8a69fb3d2394dfe3, type: 3}
 --- !u!1 &1575119393
 GameObject:
@@ -6624,19 +6626,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1562165077}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1793917522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793917517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 188652ef0f00b4ee4874b3498e8083c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pbr: {fileID: 511080400}
 --- !u!64 &1793917523
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6659,6 +6648,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -163567295486190987, guid: e62e7af20a2274bb8a69fb3d2394dfe3, type: 3}
+--- !u!114 &1793917527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793917517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0934a11be66a48599b0ee5e28f6356b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  product: 0
+  pb: {fileID: 511080400}
 --- !u!1 &1866620081
 GameObject:
   m_ObjectHideFlags: 0
@@ -7002,19 +7005,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 481942094}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1901492664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901492660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ba95d0ac4444453aa0cd7d57ccf2c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pbr2: {fileID: 1968445320}
 --- !u!64 &1901492665
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7037,6 +7027,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2722234799805398084, guid: d0734a34f37494c0191dd98a4590f00a, type: 3}
+--- !u!114 &1901492669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901492660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0934a11be66a48599b0ee5e28f6356b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  product: 3
+  pb: {fileID: 1968445322}
 --- !u!1 &1947098945
 GameObject:
   m_ObjectHideFlags: 0
@@ -7250,7 +7254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1968445319}
   - component: {fileID: 1968445321}
-  - component: {fileID: 1968445320}
+  - component: {fileID: 1968445322}
   m_Layer: 5
   m_Name: ProgressBarBreadV2
   m_TagString: Untagged
@@ -7286,33 +7290,6 @@ RectTransform:
   m_AnchoredPosition: {x: 123, y: -42}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1968445320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968445318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6b6b86020e4d43e0b3ad701f0332703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1968445321}
-  depoCount: 0
-  bartext: {fileID: 1758104729}
-  depotext: {fileID: 1749623184}
-  bartoptext: {fileID: 1947098947}
-  capacity: 10
-  number: 0
-  rmv: {fileID: 1657171656}
-  breadfactory1: {fileID: 177200548}
-  breadfactory2: {fileID: 1901492664}
-  flourfactory: {fileID: 1436363056}
-  hayfactory: {fileID: 1793917522}
-  flourcount: {fileID: 1870563201}
-  remove: {fileID: 1657171654}
-  add: {fileID: 1875914612}
 --- !u!114 &1968445321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7364,6 +7341,33 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1968445322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968445318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b6b86020e4d43e0b3ad701f0332703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1968445321}
+  depoCount: 0
+  bartext: {fileID: 1758104729}
+  depotext: {fileID: 1749623184}
+  bartoptext: {fileID: 1947098947}
+  capacity: 10
+  number: 0
+  rmv: {fileID: 1657171656}
+  breadfactory1: {fileID: 177200553}
+  breadfactory2: {fileID: 1901492669}
+  flourfactory: {fileID: 1436363060}
+  hayfactory: {fileID: 1793917527}
+  flourcount: {fileID: 1870563201}
+  remove: {fileID: 1657171654}
+  add: {fileID: 1875914612}
 --- !u!1001 &1977094350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7434,11 +7438,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a0cde6bd8e3145f9bf83a543c3636a1,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1436363056}
+      addedObject: {fileID: 1436363055}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a0cde6bd8e3145f9bf83a543c3636a1,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1436363055}
+      addedObject: {fileID: 1436363060}
   m_SourcePrefab: {fileID: 100100000, guid: 7a0cde6bd8e3145f9bf83a543c3636a1, type: 3}
 --- !u!1 &2014275760
 GameObject:

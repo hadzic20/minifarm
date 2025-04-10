@@ -7,7 +7,7 @@ public class ProgressBarHayCode : ProgressBar
 {
     public ProgressBarHayCode() : base(5) {}
 
-    [SerializeField] private HayFactory hayfactory;
+    [SerializeField] private Buildings hayfactory;
     
     private void Start() {
         hayfactory.onCollectHay += HayCollected;

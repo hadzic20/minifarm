@@ -10,10 +10,10 @@ public class ProgressBarBreadV1Code : ProgressBar
 
     public event EventHandler<EventArguments> collectingBread1;
     [SerializeField] private RemoveButton rmv;
-    [SerializeField] private BreadFactoryV1 breadfactory1;
-    [SerializeField] private BreadFactoryV2 breadfactory2;
-    [SerializeField] private FlourFactory flourfactory;
-    [SerializeField] private HayFactory hayfactory;
+    [SerializeField] private Buildings breadfactory1;
+    [SerializeField] private Buildings breadfactory2;
+    [SerializeField] private Buildings flourfactory;
+    [SerializeField] private Buildings hayfactory;
     [SerializeField] private FlourCounter flourcount;
     [SerializeField] private GameObject remove;
     [SerializeField] private GameObject add;
@@ -22,10 +22,10 @@ public class ProgressBarBreadV1Code : ProgressBar
     private void Start() {
         remove.SetActive(false);
         add.SetActive(false);
-        breadfactory1.onCollectBread += BreadCollected;
-        flourfactory.closeBreadButtons += CloseButtons;
+        breadfactory1.onCollectBread1 += BreadCollected;
+        flourfactory.closeAllButtons += CloseButtons;
         hayfactory.closeAllButtons += CloseButtons;
-        breadfactory2.closeBread1andFlour += CloseButtons;
+        breadfactory2.closeAllButtons += CloseButtons;
         flourcount.SentFlourForBread1 += AddBreadV1ToLine;
         rmv.removeBreadV1Clicked += RemoveFromLine;
     }

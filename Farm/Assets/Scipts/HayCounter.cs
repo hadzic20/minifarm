@@ -10,7 +10,7 @@ public class HayCounter : MonoBehaviour
     private int hayCount = 0;
     [SerializeField] private TextMeshProUGUI htext;
     public event EventHandler SentHayForFlour;
-    [SerializeField] private HayFactory hayfactory;
+    [SerializeField] private Buildings hayfactory;
     [SerializeField] private AddButton afb;
 
     private void Start() {
