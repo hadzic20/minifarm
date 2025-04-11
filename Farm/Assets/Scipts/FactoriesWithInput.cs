@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class FactoriesWithInput : ProgressBar
 {
+    public event EventHandler<EventArguments> usingSomething;
     [SerializeField] private int requiresItem;
     [SerializeField] private Factory requiresThis;
     [SerializeField] private RemoveButton rmv;
@@ -57,7 +58,7 @@ public class FactoriesWithInput : ProgressBar
 
     private void RequestMaterial(object sender, EventArguments e) {
         if (e.products == type) {
-            UseThings(new EventArguments(requiresItem, requiresThis, type));
+            usingSomething?.Invoke(this, new EventArguments(requiresItem, requiresThis, type));
         }
     }
 

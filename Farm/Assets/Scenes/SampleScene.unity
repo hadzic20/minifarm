@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 66650960}
   - component: {fileID: 66650962}
   - component: {fileID: 66650963}
+  - component: {fileID: 66650964}
   m_Layer: 5
   m_Name: ProgressBarFlour
   m_TagString: Untagged
@@ -513,12 +514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b1c201439454f15a41b9cd9c34fc47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  display: {fileID: 66650964}
+  fullTime: 40
   type: 1
   depoCount: 0
-  slider: {fileID: 66650962}
-  bartext: {fileID: 1019168805}
-  depotext: {fileID: 729282653}
-  bartoptext: {fileID: 257214870}
   capacity: 10
   number: 0
   requiresItem: 1
@@ -533,6 +532,22 @@ MonoBehaviour:
   hayfactory: {fileID: 1793917527}
   remove: {fileID: 614164610}
   add: {fileID: 850884363}
+--- !u!114 &66650964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66650959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb670648f80f497a85c1d9287e6de4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 66650962}
+  bartext: {fileID: 1019168805}
+  depotext: {fileID: 729282653}
+  bartoptext: {fileID: 257214870}
 --- !u!1 &68123814
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,6 +1930,7 @@ GameObject:
   - component: {fileID: 511080399}
   - component: {fileID: 511080401}
   - component: {fileID: 511080400}
+  - component: {fileID: 511080402}
   m_Layer: 5
   m_Name: ProgressBarHay
   m_TagString: Untagged
@@ -1960,12 +1976,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d09109cb68f5420b8ffa14db009de0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  display: {fileID: 511080402}
+  fullTime: 20
   type: 0
   depoCount: 0
-  slider: {fileID: 511080401}
-  bartext: {fileID: 2137399907}
-  depotext: {fileID: 7576425}
-  bartoptext: {fileID: 187910897}
   capacity: 5
   number: 0
   factory: {fileID: 1793917527}
@@ -2020,6 +2034,22 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &511080402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511080398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb670648f80f497a85c1d9287e6de4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 511080401}
+  bartext: {fileID: 2137399907}
+  depotext: {fileID: 7576425}
+  bartoptext: {fileID: 187910897}
 --- !u!1 &514908822
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,7 +3438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   display: {fileID: 868285277}
-  hayfactory: {fileID: 1793917527}
+  hayfactory: {fileID: 511080400}
   flourfactory: {fileID: 66650963}
   breadfactory1: {fileID: 1227029828}
   breadfactory2: {fileID: 1968445322}
@@ -4563,7 +4593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   display: {fileID: 1203970974}
-  hayfactory: {fileID: 1793917527}
+  hayfactory: {fileID: 511080400}
   flourfactory: {fileID: 66650963}
   breadfactory1: {fileID: 1227029828}
   breadfactory2: {fileID: 1968445322}
@@ -4591,6 +4621,7 @@ GameObject:
   - component: {fileID: 1227029825}
   - component: {fileID: 1227029827}
   - component: {fileID: 1227029828}
+  - component: {fileID: 1227029829}
   m_Layer: 5
   m_Name: ProgressBarBreadV1
   m_TagString: Untagged
@@ -4689,12 +4720,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b1c201439454f15a41b9cd9c34fc47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  display: {fileID: 1227029829}
+  fullTime: 60
   type: 2
   depoCount: 0
-  slider: {fileID: 1227029827}
-  bartext: {fileID: 1662232516}
-  depotext: {fileID: 1575119395}
-  bartoptext: {fileID: 886001704}
   capacity: 20
   number: 0
   requiresItem: 2
@@ -4709,6 +4738,22 @@ MonoBehaviour:
   hayfactory: {fileID: 1793917527}
   remove: {fileID: 57423979}
   add: {fileID: 2014275760}
+--- !u!114 &1227029829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227029824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb670648f80f497a85c1d9287e6de4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1227029827}
+  bartext: {fileID: 1662232516}
+  depotext: {fileID: 1575119395}
+  bartoptext: {fileID: 886001704}
 --- !u!1 &1239138455
 GameObject:
   m_ObjectHideFlags: 0
@@ -6912,7 +6957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   display: {fileID: 1870563201}
-  hayfactory: {fileID: 1793917527}
+  hayfactory: {fileID: 511080400}
   flourfactory: {fileID: 66650963}
   breadfactory1: {fileID: 1227029828}
   breadfactory2: {fileID: 1968445322}
@@ -7321,6 +7366,7 @@ GameObject:
   - component: {fileID: 1968445319}
   - component: {fileID: 1968445321}
   - component: {fileID: 1968445322}
+  - component: {fileID: 1968445323}
   m_Layer: 5
   m_Name: ProgressBarBreadV2
   m_TagString: Untagged
@@ -7419,12 +7465,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b1c201439454f15a41b9cd9c34fc47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  display: {fileID: 1968445323}
+  fullTime: 90
   type: 3
   depoCount: 0
-  slider: {fileID: 1968445321}
-  bartext: {fileID: 1758104729}
-  depotext: {fileID: 1749623184}
-  bartoptext: {fileID: 1947098947}
   capacity: 10
   number: 0
   requiresItem: 1
@@ -7439,6 +7483,22 @@ MonoBehaviour:
   hayfactory: {fileID: 1793917527}
   remove: {fileID: 1657171654}
   add: {fileID: 1875914612}
+--- !u!114 &1968445323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968445318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb670648f80f497a85c1d9287e6de4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1968445321}
+  bartext: {fileID: 1758104729}
+  depotext: {fileID: 1749623184}
+  bartoptext: {fileID: 1947098947}
 --- !u!1001 &1977094350
 PrefabInstance:
   m_ObjectHideFlags: 0

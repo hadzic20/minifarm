@@ -11,16 +11,16 @@ public class Counter : MonoBehaviour
     public event EventHandler<EventArguments> SentMaterials;
     [SerializeField] private Factory type;
     [SerializeField] private DisplayCounter display;
-    [SerializeField] private Buildings hayfactory;
-    [SerializeField] private ProgressBar flourfactory;
-    [SerializeField] private ProgressBar breadfactory1;
-    [SerializeField] private ProgressBar breadfactory2;
+    [SerializeField] private ProgressBar hayfactory;
+    [SerializeField] private FactoriesWithInput flourfactory;
+    [SerializeField] private FactoriesWithInput breadfactory1;
+    [SerializeField] private FactoriesWithInput breadfactory2;
 
     private void Start() {
         flourfactory.usingSomething += SomethingUsed;
         breadfactory1.usingSomething += SomethingUsed;
         breadfactory2.usingSomething += SomethingUsed;
-        hayfactory.collectFromBuildings += SomethingCollected;
+        hayfactory.collectingSomething += SomethingCollected;
         flourfactory.collectingSomething += SomethingCollected;
         breadfactory1.collectingSomething += SomethingCollected;
         breadfactory2.collectingSomething += SomethingCollected;
