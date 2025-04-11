@@ -15,11 +15,11 @@ public class Buildings : MonoBehaviour
 {
     [SerializeField] private Factory product;
     [SerializeField] private ProgressBar pb;
-    public event EventHandler closeAllButtons;
+    public event EventHandler<EventArguments> closeAllButtons;
     public event EventHandler<EventArguments> collectFromBuildings;
     
     private void OnMouseDown() {
-        closeAllButtons?.Invoke(this, EventArgs.Empty);
+        closeAllButtons?.Invoke(this, new EventArguments(pb.depoCount, product));
         collectFromBuildings?.Invoke(this, new EventArguments(pb.depoCount, product));
     }
 }

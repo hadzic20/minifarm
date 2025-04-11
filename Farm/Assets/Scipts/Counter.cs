@@ -35,11 +35,8 @@ public class Counter : MonoBehaviour
     }
 
     private void SomethingUsed(object sender, EventArguments e) {
-        Factory source = e.products;
-        bool sendingHayForFlour = (source == Factory.Flour && type == Factory.Hay);
-        bool sendingFlourForBread = ((source == Factory.BreadV1 || source == Factory.BreadV2) && type == Factory.Flour);
-        if ((sendingHayForFlour || sendingFlourForBread) && number >= e.value) {
-            SentMaterials?.Invoke(this, new EventArguments(source));
+        if (e.products == type && number >= e.value) {
+            SentMaterials?.Invoke(this, new EventArguments(e.goingTo));
             number -= e.value;
             display.Display(number.ToString());
         }

@@ -21,15 +21,15 @@ public abstract class ProgressBar : MonoBehaviour
     public int number = 0;
 
     protected void CollectThings(EventArguments e) {
-        collectingSomething?.Invoke(this, e);
+        if (e.products == type) {
+            collectingSomething?.Invoke(this, e);
+            depoCount = 0;
+            depotext.text = depoCount.ToString();
+        }
     }
 
     protected void UseThings(EventArguments e) {
         usingSomething?.Invoke(this, e);
-    }
-
-    protected ProgressBar(int capac) {
-        capacity = capac;
     }
 
     private void Start()
