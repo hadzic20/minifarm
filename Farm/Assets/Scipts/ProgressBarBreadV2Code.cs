@@ -8,13 +8,14 @@ public class ProgressBarBreadV2Code : ProgressBar
 {
     public ProgressBarBreadV2Code() : base(10) {}
 
-    public event EventHandler<EventArguments> collectingBread2;
+    [SerializeField] private AddButton adb;
     [SerializeField] private RemoveButton rmv;
+    [SerializeField] private Counter flourcounter;
     [SerializeField] private Buildings breadfactory1;
     [SerializeField] private Buildings breadfactory2;
     [SerializeField] private Buildings flourfactory;
     [SerializeField] private Buildings hayfactory;
-    [SerializeField] private FlourCounter flourcount;
+    //[SerializeField] private FlourCounter flourcount;
     [SerializeField] private GameObject remove;
     [SerializeField] private GameObject add;
     private bool buttonsOn = false;
@@ -22,29 +23,40 @@ public class ProgressBarBreadV2Code : ProgressBar
     private void Start() {
         remove.SetActive(false);
         add.SetActive(false);
-        breadfactory2.onCollectBread2 += BreadCollected;
-        flourcount.SentFlourForBread2 += AddBreadV2ToLine;
+        breadfactory2.collectFromBuildings += BreadCollected;
+        //flourcount.SentFlourForBread2 += AddBreadV2ToLine;
         breadfactory1.closeAllButtons += CloseButtons;
         flourfactory.closeAllButtons += CloseButtons;
         hayfactory.closeAllButtons += CloseButtons;
-        rmv.removeBreadV2Clicked += RemoveFromLine;
+        adb.RequestMaterials += RequestMaterial;
+        flourcounter.SentMaterials += AddBreadV2ToLine;
+        rmv.removeSomething += RemoveFromLine;
     }
 
     private void BreadCollected(object sender, EventArguments e) {
-        if (!buttonsOn) {
-            remove.SetActive(true);
-            add.SetActive(true);
-            buttonsOn = true;
-        }
-        else {
-            collectingBread2?.Invoke(this, new EventArguments(depoCount));
-            number -= depoCount;
-            depoCount = 0;
-            depotext.text = depoCount.ToString();
+        if (e.products == Factory.BreadV2) {
+            if (!buttonsOn) {
+                remove.SetActive(true);
+                add.SetActive(true);
+                buttonsOn = true;
+            }
+            else {
+                CollectThings(new EventArguments(depoCount, Factory.BreadV2));
+                number -= depoCount;
+                depoCount = 0;
+                depotext.text = depoCount.ToString();
+            }
         }
     }
-    private void AddBreadV2ToLine(object sender, EventArgs e) {
-        if (number < capacity) {
+
+    private void RequestMaterial(object sender, EventArguments e) {
+        if (e.products == Factory.BreadV2) {
+            UseThings(new EventArguments(1, Factory.BreadV2));
+        }
+    }
+
+    private void AddBreadV2ToLine(object sender, EventArguments e) {
+        if (e.products == Factory.BreadV2) {
             line++;
             number++;
         }

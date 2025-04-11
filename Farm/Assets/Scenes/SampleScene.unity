@@ -290,11 +290,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1630699894}
-  m_Father: {fileID: 1227029825}
+  m_Father: {fileID: 1575119394}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125, y: 125}
+  m_AnchoredPosition: {x: -60.999992, y: 133}
   m_SizeDelta: {x: 100, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &57423981
@@ -309,6 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d19b368c536484ba1e9b50e8768b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfc: {fileID: 1227029826}
 --- !u!114 &57423982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +356,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 57423981}
         m_TargetAssemblyTypeName: RemoveButton, Assembly-CSharp
-        m_MethodName: clickedRemoveBreadV1
+        m_MethodName: clickedRemove
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -461,19 +462,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de3d2db8b0d84de8a620c8fd8056d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 66650962}
+  type: 1
   depoCount: 0
+  slider: {fileID: 66650962}
   bartext: {fileID: 1019168805}
   depotext: {fileID: 729282653}
   bartoptext: {fileID: 257214870}
   capacity: 10
   number: 0
+  adb: {fileID: 850884369}
   rmv: {fileID: 614164616}
+  haycounter: {fileID: 868285278}
   breadfactory1: {fileID: 177200553}
   breadfactory2: {fileID: 1901492669}
   flourfactory: {fileID: 1436363060}
   hayfactory: {fileID: 1793917527}
-  haycount: {fileID: 868285277}
   remove: {fileID: 614164610}
   add: {fileID: 850884363}
 --- !u!114 &66650962
@@ -1954,8 +1957,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521a9b16abc804f7eba1353906f4f2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 511080401}
+  type: 0
   depoCount: 0
+  slider: {fileID: 511080401}
   bartext: {fileID: 2137399907}
   depotext: {fileID: 7576425}
   bartoptext: {fileID: 187910897}
@@ -2444,7 +2448,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 614164616}
         m_TargetAssemblyTypeName: RemoveButton, Assembly-CSharp
-        m_MethodName: clickedRemoveFlour
+        m_MethodName: clickedRemove
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2504,6 +2508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d19b368c536484ba1e9b50e8768b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfc: {fileID: 66650961}
 --- !u!1001 &660723142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3271,8 +3276,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 850884369}
-        m_TargetAssemblyTypeName: AddFlourButton, Assembly-CSharp
-        m_MethodName: clickedAddFlour
+        m_TargetAssemblyTypeName: AddButton, Assembly-CSharp
+        m_MethodName: clickedAdd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3332,6 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6434abcbcbc194db98dcb1a3ead47cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfc: {fileID: 66650961}
 --- !u!1 &868285275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,6 +3347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 868285276}
+  - component: {fileID: 868285278}
   - component: {fileID: 868285277}
   m_Layer: 5
   m_Name: HayBar
@@ -3380,12 +3387,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 868285275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78b44982e29a241d4a28d8462283e1b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ed4efdaf358b4088ba8f1bb3a6b4693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  htext: {fileID: 544744808}
+  btext: {fileID: 544744808}
+--- !u!114 &868285278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868285275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5484ee06d9244536ac32dff7a74ef2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  display: {fileID: 868285277}
   hayfactory: {fileID: 1793917527}
-  afb: {fileID: 850884369}
+  flourfactory: {fileID: 66650961}
+  breadfactory1: {fileID: 1227029826}
+  breadfactory2: {fileID: 1968445322}
 --- !u!1 &886001702
 GameObject:
   m_ObjectHideFlags: 0
@@ -4493,6 +4516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203970972}
   - component: {fileID: 1203970973}
+  - component: {fileID: 1203970974}
   m_Layer: 5
   m_Name: BreadBar
   m_TagString: Untagged
@@ -4534,9 +4558,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5484ee06d9244536ac32dff7a74ef2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btext: {fileID: 1037848418}
+  type: 2
+  display: {fileID: 1203970974}
+  hayfactory: {fileID: 1793917527}
+  flourfactory: {fileID: 511080400}
   breadfactory1: {fileID: 1227029826}
   breadfactory2: {fileID: 1968445322}
+--- !u!114 &1203970974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203970971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed4efdaf358b4088ba8f1bb3a6b4693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btext: {fileID: 1037848418}
 --- !u!1 &1227029824
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,7 +4613,6 @@ RectTransform:
   - {fileID: 1647677413}
   - {fileID: 1575119394}
   - {fileID: 1662232515}
-  - {fileID: 57423980}
   - {fileID: 2014275761}
   - {fileID: 886001703}
   m_Father: {fileID: 1100066536}
@@ -4595,19 +4634,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf76bf4f87ba475f918be23744d275a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1227029827}
+  type: 2
   depoCount: 0
+  slider: {fileID: 1227029827}
   bartext: {fileID: 1662232516}
   depotext: {fileID: 1575119395}
   bartoptext: {fileID: 886001704}
   capacity: 20
   number: 0
   rmv: {fileID: 57423981}
+  adb: {fileID: 2014275766}
+  flourcounter: {fileID: 1870563202}
   breadfactory1: {fileID: 177200553}
   breadfactory2: {fileID: 1901492669}
   flourfactory: {fileID: 1436363060}
   hayfactory: {fileID: 1793917527}
-  flourcount: {fileID: 1870563201}
   remove: {fileID: 57423979}
   add: {fileID: 2014275760}
 --- !u!114 &1227029827
@@ -5378,7 +5419,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 57423980}
   m_Father: {fileID: 1227029825}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5821,6 +5863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d19b368c536484ba1e9b50e8768b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfc: {fileID: 1968445322}
 --- !u!114 &1657171657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5867,7 +5910,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1657171656}
         m_TargetAssemblyTypeName: RemoveButton, Assembly-CSharp
-        m_MethodName: clickedRemoveBreadV2
+        m_MethodName: clickedRemove
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6805,6 +6848,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1870563200}
+  - component: {fileID: 1870563202}
   - component: {fileID: 1870563201}
   m_Layer: 5
   m_Name: FlourBar
@@ -6844,13 +6888,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1870563199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 965d4a49c3b8743449006665a5135959, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ed4efdaf358b4088ba8f1bb3a6b4693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ftext: {fileID: 1866620083}
+  btext: {fileID: 1866620083}
+--- !u!114 &1870563202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870563199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5484ee06d9244536ac32dff7a74ef2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  display: {fileID: 1870563201}
+  hayfactory: {fileID: 1793917527}
   flourfactory: {fileID: 66650961}
-  abv: {fileID: 2014275766}
-  abv2: {fileID: 1875914618}
+  breadfactory1: {fileID: 1227029826}
+  breadfactory2: {fileID: 1968445322}
 --- !u!1 &1875914612
 GameObject:
   m_ObjectHideFlags: 0
@@ -6938,8 +6997,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1875914618}
-        m_TargetAssemblyTypeName: AddFlourButton, Assembly-CSharp
-        m_MethodName: clickedAddBreadV2
+        m_TargetAssemblyTypeName: AddButton, Assembly-CSharp
+        m_MethodName: clickedAdd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6999,6 +7058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6434abcbcbc194db98dcb1a3ead47cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfc: {fileID: 1968445322}
 --- !u!1 &1901492660 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d0734a34f37494c0191dd98a4590f00a,
@@ -7353,19 +7413,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b6b86020e4d43e0b3ad701f0332703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1968445321}
+  type: 3
   depoCount: 0
+  slider: {fileID: 1968445321}
   bartext: {fileID: 1758104729}
   depotext: {fileID: 1749623184}
   bartoptext: {fileID: 1947098947}
   capacity: 10
   number: 0
+  adb: {fileID: 1875914618}
   rmv: {fileID: 1657171656}
+  flourcounter: {fileID: 1870563202}
   breadfactory1: {fileID: 177200553}
   breadfactory2: {fileID: 1901492669}
   flourfactory: {fileID: 1436363060}
   hayfactory: {fileID: 1793917527}
-  flourcount: {fileID: 1870563201}
   remove: {fileID: 1657171654}
   add: {fileID: 1875914612}
 --- !u!1001 &1977094350
@@ -7531,8 +7593,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2014275766}
-        m_TargetAssemblyTypeName: AddFlourButton, Assembly-CSharp
-        m_MethodName: clickedAddBreadV1
+        m_TargetAssemblyTypeName: AddButton, Assembly-CSharp
+        m_MethodName: clickedAdd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7592,6 +7654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6434abcbcbc194db98dcb1a3ead47cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfc: {fileID: 1227029826}
 --- !u!1001 &2035655670
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,13 +10,15 @@ public class ProgressBarHayCode : ProgressBar
     [SerializeField] private Buildings hayfactory;
     
     private void Start() {
-        hayfactory.onCollectHay += HayCollected;
+        hayfactory.collectFromBuildings += HayCollected;
         line = 10000;
     }
 
     private void HayCollected(object sender, EventArguments e) {
-        depoCount = 0;
-        depotext.text = depoCount.ToString();
-        line++;
+        if (e.products == Factory.Hay) {
+            depoCount = 0;
+            depotext.text = depoCount.ToString();
+            line++;
+        }
     }
 }

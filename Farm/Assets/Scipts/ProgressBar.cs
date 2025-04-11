@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,26 @@ using TMPro;
 
 public abstract class ProgressBar : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
+    public Factory type;
     private float time;
     public int depoCount;
+    public event EventHandler<EventArguments> collectingSomething;
+    public event EventHandler<EventArguments> usingSomething;
+    [SerializeField] private Slider slider;
     [SerializeField] private TextMeshProUGUI bartext;
     [SerializeField] protected TextMeshProUGUI depotext;
     [SerializeField] protected TextMeshProUGUI bartoptext;
     public int capacity;
     protected int line = 0;
     public int number = 0;
+
+    protected void CollectThings(EventArguments e) {
+        collectingSomething?.Invoke(this, e);
+    }
+
+    protected void UseThings(EventArguments e) {
+        usingSomething?.Invoke(this, e);
+    }
 
     protected ProgressBar(int capac) {
         capacity = capac;

@@ -9,13 +9,14 @@ public class ProgressBarFlourCode : ProgressBar
 {
     public ProgressBarFlourCode() : base(10) {}
 
-    public event EventHandler<EventArguments> onCollectFlour;
+    [SerializeField] private AddButton adb;
     [SerializeField] private RemoveButton rmv;
+    [SerializeField] private Counter haycounter;
     [SerializeField] private Buildings breadfactory1;
     [SerializeField] private Buildings breadfactory2;
     [SerializeField] private Buildings flourfactory;
     [SerializeField] private Buildings hayfactory;
-    [SerializeField] private HayCounter haycount;
+    //[SerializeField] private HayCounter haycount;
     [SerializeField] private GameObject remove;
     [SerializeField] private GameObject add;
     private bool buttonsOn = false;
@@ -27,34 +28,44 @@ public class ProgressBarFlourCode : ProgressBar
         hayfactory.closeAllButtons += CloseButtons;
         breadfactory1.closeAllButtons += CloseButtons;
         breadfactory2.closeAllButtons += CloseButtons;
-        flourfactory.onCollectFlour += FlourCollected;
-        haycount.SentHayForFlour += AddFlourToLine;
-        rmv.removeFlourClicked += RemoveFromLine;
+        flourfactory.collectFromBuildings += FlourCollected;
+        //haycount.SentHayForFlour += AddFlourToLine;
+        adb.RequestMaterials += RequestMaterial;
+        haycounter.SentMaterials += AddFlourToLine;
+        rmv.removeSomething += RemoveFromLine;
     }
 
     private void FlourCollected(object sender, EventArguments e) {
-        if (!buttonsOn) {
-            remove.SetActive(true);
-            add.SetActive(true);
-            buttonsOn = true;
-        }
-        else {
-            onCollectFlour?.Invoke(this, new EventArguments(depoCount));
-            number -= depoCount;
-            depoCount = 0;
-            depotext.text = depoCount.ToString();
+        if (e.products == Factory.Flour) {
+            if (!buttonsOn) {
+                remove.SetActive(true);
+                add.SetActive(true);
+                buttonsOn = true;
+            }
+            else {
+                CollectThings(new EventArguments(depoCount, Factory.Flour));
+                number -= depoCount;
+                depoCount = 0;
+                depotext.text = depoCount.ToString();
+            }
         }
     }
 
-    private void AddFlourToLine(object sender, EventArgs e) {
-        if (number < capacity) {
+    private void RequestMaterial(object sender, EventArguments e) {
+        if (e.products == Factory.Flour) {
+            UseThings(new EventArguments(1, Factory.Flour));
+        }
+    }
+
+    private void AddFlourToLine(object sender, EventArguments e) {
+        if (e.products == Factory.Flour) {
             line++;
             number++;
         }
     }
 
-    private void RemoveFromLine(object sender, EventArgs e) {
-        if (line > 0) {
+    private void RemoveFromLine(object sender, EventArguments e) {
+        if (e.products == Factory.Flour && line > 0) {
             line--;
             number--;
         }

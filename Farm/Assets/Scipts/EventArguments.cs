@@ -6,8 +6,14 @@ using UnityEngine;
 public class EventArguments : EventArgs
 {
     public int value;
+    public Factory products;
 
-    public EventArguments(int vl) {
+    public EventArguments(Factory pr) {
+        products = pr;
+    }
+
+    public EventArguments(int vl, Factory pr) {
+        products = pr;
         value = vl;
     }
 }
